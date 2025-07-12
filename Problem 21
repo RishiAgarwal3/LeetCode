@@ -1,0 +1,31 @@
+class Solution:
+    def mergeTwoLists(self, list1, list2):
+        lst = []
+        sorted_list = []
+        a = 0
+        current1 = list1
+        current2 = list2
+        
+        while current1:
+            lst.append(current1.val)
+            current1 = current1.next
+        while current2:
+            lst.append(current2.val)
+            current2 = current2.next
+        
+        while len(lst) > 0:
+            minimum = min(lst)
+            sorted_list.append(minimum)
+            lst.remove(minimum)
+        
+        return self.listToLinkedList(sorted_list)
+    
+    def listToLinkedList(self, nums):
+        if not nums:
+            return None
+        head = ListNode(nums[0])
+        current = head
+        for val in nums[1:]:
+            current.next = ListNode(val)
+            current = current.next
+        return head
