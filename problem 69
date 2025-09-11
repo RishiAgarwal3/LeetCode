@@ -1,0 +1,6 @@
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        import math
+        a = math.sqrt(x)
+        a = int(a)
+        return a
