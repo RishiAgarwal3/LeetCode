@@ -1,3 +1,6 @@
+#This one is a bit tricky since it involves a bit of thinking but upon close examination we can see that it represents a fibonacci series with shifting one index
+
+
 class Solution:
     def climbStairs(self, n: int) -> int:
         a, b = 1, 1
